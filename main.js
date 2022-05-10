@@ -26,13 +26,30 @@ function draw()
 
 function take_snapshot()
 {
-    Webcam.snap(function (data_uri) {
-        document.getElementById("result").innerHTML = '<img id="captured_image" src = "'+data_uri+'">';
-    });
+    save("Mom's Mother's Day Memories")
 }
 
  function new_image()
 {
+            
+	fabric.image.fromURL("Mom's Mother's day Photo.png", function(Img) {
+        block_image_object = Img;
+
+        block_image_object.scaleToWidth(700);
+        block_image_object.scaleToHeight(510);
+        block_image_object.set({
+        top:0,
+        left:0
+    })
+    canvas.add(block_image_object); 
+    })
+	
+}
+
+function playSound(){
+    x.play();
+
+}
             
 	fabric.image.fromURL("Mom's Mother's day Photo.png", function(Img) {
         block_image_object = Img;
